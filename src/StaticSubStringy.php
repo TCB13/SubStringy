@@ -2,7 +2,7 @@
 
 namespace SubStringy;
 
-use Stringy\Stringy;
+use Stringy\StaticStringy;
 
 class StaticSubStringy extends StaticStringy
 {
@@ -61,6 +61,18 @@ class StaticSubStringy extends StaticStringy
     public static function substringBeforeLast($str, $separator, $encoding = null)
     {
         return SubStringy::create($str, $encoding)->substringBeforeLast($separator);
+    }
+
+     /**
+     * Extracts a string from between two substrings present on the current string
+     * @param string $str         The haystack to search through
+     * @param  string $start 
+     * @param  staing $end 
+     * @return string
+     */
+    public static function substringBetween($str, $start, $end, $encoding = null)
+    {
+    	return SubStringy::create($str, $encoding)->substringBetween($start, $end);
     }
 
 }

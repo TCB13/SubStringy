@@ -63,4 +63,23 @@ class SubStringy extends Stringy implements \Countable, \IteratorAggregate, \Arr
         return mb_substr($this->str, 0, $offset, $this->encoding); 
     }
 
+    /**
+     * Extracts a string from between two substrings present on the current string
+     * @param  string $start 
+     * @param  staing $end 
+     * @return string
+     */
+    public function substringBetween($start, $end)
+    {
+        //$this->str = " " . $this->str;
+        $ini = mb_stripos($this->str, $start, 0, $this->encoding);
+        
+        if ($ini == 0)
+            return "";
+        
+        $ini += mb_strlen($start, $this->encoding);
+        $len = mb_stripos($this->str, $end, $ini, $this->encoding) - $ini;
+        return mb_substr($this->str, $ini, $len, $this->encoding);
+    }
+
 }

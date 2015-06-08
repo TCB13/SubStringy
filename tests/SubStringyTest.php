@@ -55,5 +55,14 @@ class SubStringyTestCase extends CommonTest
         $this->assertEquals($expected, $result);
     }
 
+    /**
+     * @dataProvider substringBetweenProvider()
+     */
+    public function testSubstringBetween($expected, $str, $start, $end, $encoding = null)
+    {
+        $result = S::create($str, $encoding)->substringBetween($start, $end);
+        $this->assertInternalType('string', $result);
+        $this->assertEquals($expected, $result);
+    }
 
 }

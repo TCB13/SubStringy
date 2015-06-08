@@ -46,4 +46,11 @@ abstract class CommonTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    public function substringBetweenProvider()
+    {
+        return array( 
+            array(' nice ', 'hello this is a nice string', 'a', 'string', 'UTF-8'),
+        );
+    }
+
 }

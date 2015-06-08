@@ -48,4 +48,14 @@ class StaticSubStringyTestCase extends CommonTest
         $this->assertEquals($expected, $result);
     }
 
+     /**
+     * @dataProvider substringBetweenProvider()
+     */
+    public function testSubstringBetween($expected, $str, $start, $end, $encoding = null)
+    {
+        $result = S::substringBetween($str, $start, $end, $encoding);
+        $this->assertInternalType('string', $result);
+        $this->assertEquals($expected, $result);
+    }
+
 }
