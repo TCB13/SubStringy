@@ -14,6 +14,7 @@ This library extends and adds SubString functionality to `danielstjules/Stringy`
     * [substringAfterLast](#substringafterlast)
     * [substringBeforeFirst](#substringbeforefirst)
     * [substringBeforeLast](#substringbeforelast)
+    * [substringBetween](#substringbetween)
 * [Links](#links)
 * [Tests](#tests)
 * [License](#license)
@@ -198,6 +199,19 @@ Gets the substring before the last occurrence of a separator. If no match is fou
 ```php
 S::create('What are your plans today? Any plans for tomorrow?')->substringBeforeLast(' plans');
 S::substringBeforeLast('What are your plans today? Any plans for tomorrow?', ' plans');  // What are your plans today? Any'
+```
+
+#### substringBetween
+
+$stringy->substringBetween(string $start, string $end)
+
+S::substringBetween(string $str, string $start, string $end [, string $encoding ])
+
+Extracts a substring from between two substrings present on the current string.
+
+```php
+S::create('What are your plans today?')->substringBetween('your ', ' today');
+S::substringBetween('What are your plans today?', 'your ', ' today');  // plans
 ```
 
 ## Links
