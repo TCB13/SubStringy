@@ -27,13 +27,18 @@ in your composer.json file:
 ```json
 {
 	"repositories":
-	[
-	    {
+    [
+        {
 	        "type": "vcs",
-	        "url": "https://github.com/tcb13/SubStringy/"
-	    }
-	],
+	        "url": "https://github.com/tcb13/Stringy/"
+	    },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tcb13/SubStringy/"
+        }
+    ],
     "require": {
+    	"danielstjules/Stringy": "dev-master",
         "tcb13/SubStringy": "dev-master"
     }
 }
