@@ -21,7 +21,7 @@ class SubStringyTestCase extends CommonTest
     public function testSubstringAfterFirst($expected, $str, $separator, $encoding = null)
     {
         $result = S::create($str, $encoding)->substringAfterFirst($separator);
-        $this->assertInternalType('string', $result);
+        $this->assertInternalType('string', (string)$result);
         $this->assertEquals($expected, $result);
     }
 
@@ -31,7 +31,7 @@ class SubStringyTestCase extends CommonTest
     public function testSubstringAfterLast($expected, $str, $separator, $encoding = null)
     {
         $result = S::create($str, $encoding)->substringAfterLast($separator);
-        $this->assertInternalType('string', $result);
+        $this->assertInternalType('string', (string)$result);
         $this->assertEquals($expected, $result);
     }
 
@@ -41,7 +41,7 @@ class SubStringyTestCase extends CommonTest
     public function testSubstringBeforeFirst($expected, $str, $separator, $encoding = null)
     {
         $result = S::create($str, $encoding)->substringBeforeFirst($separator);
-        $this->assertInternalType('string', $result);
+        $this->assertInternalType('string', (string)$result);
         $this->assertEquals($expected, $result);
     }
 
@@ -51,7 +51,7 @@ class SubStringyTestCase extends CommonTest
     public function testSubstringBeforeLast($expected, $str, $separator, $encoding = null)
     {
         $result = S::create($str, $encoding)->substringBeforeLast($separator);
-        $this->assertInternalType('string', $result);
+        $this->assertInternalType('string', (string)$result);
         $this->assertEquals($expected, $result);
     }
 
@@ -61,7 +61,7 @@ class SubStringyTestCase extends CommonTest
     public function testSubstringBetween($expected, $str, $start, $end, $encoding = null)
     {
         $result = S::create($str, $encoding)->substringBetween($start, $end);
-        $this->assertInternalType('string', $result);
+        $this->assertInternalType('string', (string)$result);
         $this->assertEquals($expected, $result);
     }
 

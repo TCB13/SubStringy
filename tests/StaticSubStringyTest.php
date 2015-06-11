@@ -14,7 +14,7 @@ class StaticSubStringyTestCase extends CommonTest
     public function testSubstringAfterFirst($expected, $str, $separator, $encoding = null)
     {
         $result = S::substringAfterFirst($str, $separator, $encoding);
-        $this->assertInternalType('string', $result);
+        $this->assertInternalType('string', (string)$result);
         $this->assertEquals($expected, $result);
     }
 
@@ -24,7 +24,7 @@ class StaticSubStringyTestCase extends CommonTest
     public function testSubstringAfterLast($expected, $str, $separator, $encoding = null)
     {
         $result = S::substringAfterLast($str, $separator, $encoding);
-        $this->assertInternalType('string', $result);
+        $this->assertInternalType('string', (string)$result);
         $this->assertEquals($expected, $result);
     }
 
@@ -34,7 +34,7 @@ class StaticSubStringyTestCase extends CommonTest
     public function testSubstringBeforeFirst($expected, $str, $separator, $encoding = null)
     {
         $result = S::substringBeforeFirst($str, $separator, $encoding);
-        $this->assertInternalType('string', $result);
+        $this->assertInternalType('string', (string)$result);
         $this->assertEquals($expected, $result);
     }
 
@@ -44,7 +44,7 @@ class StaticSubStringyTestCase extends CommonTest
     public function testSubstringBeforeLast($expected, $str, $separator, $encoding = null)
     {
         $result = S::substringBeforeLast($str, $separator, $encoding);
-        $this->assertInternalType('string', $result);
+        $this->assertInternalType('string', (string)$result);
         $this->assertEquals($expected, $result);
     }
 
@@ -54,7 +54,7 @@ class StaticSubStringyTestCase extends CommonTest
     public function testSubstringBetween($expected, $str, $start, $end, $encoding = null)
     {
         $result = S::substringBetween($str, $start, $end, $encoding);
-        $this->assertInternalType('string', $result);
+        $this->assertInternalType('string', (string)$result);
         $this->assertEquals($expected, $result);
     }
 

@@ -18,7 +18,7 @@ class SubStringy extends Stringy implements \Countable, \IteratorAggregate, \Arr
     {
         if (($offset = $this->indexOf($separator)) === false)
             return false;
-        return mb_substr($this->str, $offset + mb_strlen($separator, $this->encoding), null, $this->encoding); 
+        return static::create(mb_substr($this->str, $offset + mb_strlen($separator, $this->encoding), null, $this->encoding), $this->encoding); 
     }
 
     /**
@@ -32,7 +32,7 @@ class SubStringy extends Stringy implements \Countable, \IteratorAggregate, \Arr
     {
         if (($offset = $this->indexOfLast($separator)) === false)
             return false;
-        return mb_substr($this->str, $offset + mb_strlen($separator, $this->encoding), null, $this->encoding); 
+        return static::create(mb_substr($this->str, $offset + mb_strlen($separator, $this->encoding), null, $this->encoding), $this->encoding);
     }
 
     /**
@@ -46,7 +46,7 @@ class SubStringy extends Stringy implements \Countable, \IteratorAggregate, \Arr
     {
         if (($offset = $this->indexOf($separator)) === false)
             return false;
-        return mb_substr($this->str, 0, $offset, $this->encoding); 
+        return static::create(mb_substr($this->str, 0, $offset, $this->encoding), $this->encoding);
     }
 
     /**
@@ -60,7 +60,7 @@ class SubStringy extends Stringy implements \Countable, \IteratorAggregate, \Arr
     {
         if (($offset = $this->indexOfLast($separator)) === false)
             return false;
-        return mb_substr($this->str, 0, $offset, $this->encoding); 
+        return static::create(mb_substr($this->str, 0, $offset, $this->encoding), $this->encoding);
     }
 
     /**
@@ -79,7 +79,7 @@ class SubStringy extends Stringy implements \Countable, \IteratorAggregate, \Arr
         
         $ini += mb_strlen($start, $this->encoding);
         $len = mb_stripos($this->str, $end, $ini, $this->encoding) - $ini;
-        return mb_substr($this->str, $ini, $len, $this->encoding);
+        return static::create(mb_substr($this->str, $ini, $len, $this->encoding), $this->encoding);
     }
 
 }
