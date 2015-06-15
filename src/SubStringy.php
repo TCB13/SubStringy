@@ -82,4 +82,14 @@ class SubStringy extends Stringy implements \Countable, \IteratorAggregate, \Arr
         return static::create(mb_substr($this->str, $ini, $len, $this->encoding), $this->encoding);
     }
 
+    /**
+     * Count the number of substring occurrences on the current string 
+     * @param  string $substr 
+     * @return int
+     */
+    public function substringCount($substr)
+    {
+    	return mb_substr_count($this->str , $substr, $this->encoding);
+    }
+
 }

@@ -15,6 +15,7 @@ This library extends and adds SubString functionality to `danielstjules/Stringy`
     * [substringBeforeFirst](#substringbeforefirst)
     * [substringBeforeLast](#substringbeforelast)
     * [substringBetween](#substringbetween)
+    * [substringCount](#substringcount)
 * [Links](#links)
 * [Tests](#tests)
 * [License](#license)
@@ -217,6 +218,19 @@ Extracts a substring from between two substrings present on the current string.
 ```php
 S::create('What are your plans today?')->substringBetween('your ', ' today');
 S::substringBetween('What are your plans today?', 'your ', ' today');  // plans
+```
+
+#### substringCount
+
+$stringy->substringCount(string $substr)
+
+S::substringCount(string $str, string $substr [, string $encoding ])
+
+Count the number of substring occurrences on the current string 
+
+```php
+S::create('how are you? are you sure you are ok?')->substringCount('are');
+S::substringCount('how are you? are you sure you are ok?', 'are');  // 3
 ```
 
 ## Links

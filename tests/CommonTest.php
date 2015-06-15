@@ -53,4 +53,12 @@ abstract class CommonTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    public function substringCountProvider()
+    {
+    	 return array( 
+            array(2, 'hello how are you? are you ok?', '?', 'UTF-8'),
+            array(1, 'hello how are you? are you ok?', 'hello', 'UTF-8'),
+        );
+    }
+
 }

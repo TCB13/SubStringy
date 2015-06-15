@@ -58,4 +58,14 @@ class StaticSubStringyTestCase extends CommonTest
         $this->assertEquals($expected, $result);
     }
 
+    /**
+    * @dataProvider substringCountProvider()
+    */
+    public function testSubstringCount($expected, $str, $substr, $encoding = null)
+    {
+        $result = S::substringCount($str, $substr, $encoding);
+        $this->assertInternalType('int', $result);
+        $this->assertEquals($expected, $result);
+    }
+
 }

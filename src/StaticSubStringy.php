@@ -75,4 +75,14 @@ class StaticSubStringy extends StaticStringy
     	return SubStringy::create($str, $encoding)->substringBetween($start, $end);
     }
 
+    /**
+     * Count the number of substring occurrences on the current string 
+     * @param  string $substr 
+     * @return int
+     */
+    public static function substringCount($str, $substr, $encoding = null)
+    {
+    	return SubStringy::create($str, $encoding)->substringCount($substr);
+    }
+
 }
