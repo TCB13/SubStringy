@@ -14,13 +14,6 @@
             "homepage": "http://www.iklive.org"
         }
     ],
-    "repositories":
-	[
-	    {
-	        "type": "vcs",
-	        "url": "https://github.com/tcb13/Stringy/"
-	    }
-	],
     "require": {
         "php": ">=5.3.0",
         "ext-mbstring": "*",

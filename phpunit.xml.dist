@@ -7,7 +7,6 @@
         <testsuite name="SubStringy">
             <file>tests/CommonTest.php</file>
             <file>tests/SubStringyTest.php</file>
-            <file>tests/StaticSubStringyTest.php</file>
             <file phpVersion="5.6.0">tests/CreateTest.php</file>
         </testsuite>
     </testsuites>

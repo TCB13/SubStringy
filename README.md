@@ -1,12 +1,12 @@
-A PHP SubString manipulation library with multibyte support that extends Stringy. Offers both OO method
-chaining and a procedural-style static wrapper. Tested and compatible with PHP 5.3+ and HHVM.
+A PHP SubString manipulation library with multibyte support that extends Stringy. Offers OO method
+chaining. Tested and compatible with PHP 5.4+ and HHVM.
 
 This library extends and adds SubString functionality to `danielstjules/Stringy` you should check it's [documentation](https://github.com/danielstjules/Stringy/blob/master/README.md) for methods inherited by SubStringy.
 
 [![Build Status](https://api.travis-ci.org/tcb13/SubStringy.svg?branch=master)](https://travis-ci.org/tcb13/SubStringy)
 
 * [Requiring/Loading](#requiringloading)
-* [OO and Procedural](#oo-and-procedural)
+* [OO and Chaining](#oo-and-chaining)
 * [Implemented Interfaces](#implemented-interfaces)
 * [PHP 5.6 Creation](#php-56-creation)
 * [Methods](#methods)
@@ -30,10 +30,6 @@ in your composer.json file:
 	"repositories":
     [
         {
-	        "type": "vcs",
-	        "url": "https://github.com/tcb13/Stringy/"
-	    },
-        {
             "type": "vcs",
             "url": "https://github.com/tcb13/SubStringy/"
         }
@@ -56,23 +52,17 @@ Otherwise, you can simply require the file directly:
 
 ```php
 require_once 'path/to/SubStringy/src/SubStringy.php';
-// or
-require_once 'path/to/SubStringy/src/StaticSubStringy.php';
 ```
 
 And in either case, I'd suggest using an alias.
 
 ```php
 use SubStringy\SubStringy as S;
-// or
-use SubStringy\StaticSubStringy as S;
 ```
 
-## OO and Procedural
+## OO and Chaining
 
-The library offers both OO method chaining with `SubStringy\SubStringy`, as well as
-procedural-style static method calls with `SubStringy\StaticSubStringy`. An example
-of the former is the following:
+The library offers OO method chaining, as seen below:
 
 ```php
 use Stringy\Stringy as S;
@@ -82,14 +72,6 @@ echo S::create('Fòô     Bàř', 'UTF-8')->collapseWhitespace()->swapCase();  /
 `Stringy\Stringy` has a __toString() method, which returns the current string
 when the object is used in a string context, ie:
 `(string) S::create('foo')  // 'foo'`
-
-Using the static wrapper, an alternative is the following:
-
-```php
-use Stringy\StaticStringy as S;
-$string = S::collapseWhitespace('Fòô     Bàř', 'UTF-8');
-echo S::swapCase($string, 'UTF-8');  // 'fÒÔ bÀŘ'
-```
 
 ## Implemented Interfaces
 
@@ -146,10 +128,7 @@ s('Fòô     Bàř', 'UTF-8')->collapseWhitespace()->swapCase();
 
 ## Methods
 
-In the list below, any static method other than S::create refers to a method in
-`SubStringy\StaticSubStringy`. For all others, they're found in `SubStringy\SubStringy`.
-Furthermore, all methods that return a SubStringy object or string do not modify
-the original. SubStringy objects are immutable.
+All methods that return a SubStringy object or string do not modify the original. SubStringy objects are immutable.
 
 Since this library extends and adds SubString functionality to `danielstjules/Stringy` you should check it's documentation (https://github.com/danielstjules/Stringy/blob/master/README.md) for methods that can also be transparently used when working with SubStringy.
 
@@ -159,78 +138,60 @@ Since this library extends and adds SubString functionality to `danielstjules/St
 
 $stringy->substringAfterFirst(string $separator)
 
-S::substringAfterFirst(string $str, string $separator [, string $encoding ])
-
 Gets the substring after the first occurrence of a separator. If no match is found returns false.
 
 ```php
 S::create('What are your plans today?')->substringAfterFirst('plans ');
-S::substringAfterFirst('What are your plans today?', 'plans ');  // 'today?'
 ```
 
 #### substringAfterLast
 
 $stringy->substringAfterLast(string $separator)
 
-S::substringAfterLast(string $str, string $separator [, string $encoding ])
-
 Gets the substring after the last occurrence of a separator. If no match is found returns false.
 
 ```php
 S::create('This is a String. How cool can a String be after all?')->substringAfterLast('String ');
-S::substringAfterLast('This is a String. How cool can a String be after all?', 'String ');  // 'be after all?'
 ```
 
 #### substringBeforeFirst
 
 $stringy->substringBeforeFirst(string $separator)
 
-S::substringBeforeFirst(string $str, string $separator [, string $encoding ])
-
 Gets the substring before the first occurrence of a separator. If no match is found returns false.
 
 ```php
 S::create('What are your plans today?')->substringBeforeFirst(' plans');
-S::substringBeforeFirst('What are your plans today?', ' plans');  // 'What are your'
 ```
 
 #### substringBeforeLast
 
 $stringy->substringBeforeLast(string $separator)
 
-S::substringBeforeLast(string $str, string $separator [, string $encoding ])
-
 Gets the substring before the last occurrence of a separator. If no match is found returns false.
 
 ```php
 S::create('What are your plans today? Any plans for tomorrow?')->substringBeforeLast(' plans');
-S::substringBeforeLast('What are your plans today? Any plans for tomorrow?', ' plans');  // What are your plans today? Any'
 ```
 
 #### substringBetween
 
 $stringy->substringBetween(string $start, string $end)
 
-S::substringBetween(string $str, string $start, string $end [, string $encoding ])
-
 Extracts a substring from between two substrings present on the current string.
 
 ```php
 S::create('What are your plans today?')->substringBetween('your ', ' today');
-S::substringBetween('What are your plans today?', 'your ', ' today');  // plans
 ```
 
 #### substringCount
 
 $stringy->substringCount(string $substr)
 
-S::substringCount(string $str, string $substr [, string $encoding ])
-
 Count the number of substring occurrences on the current string 
 
 ```php
 S::create('how are you? are you sure you are ok?')->substringCount('are');
-S::substringCount('how are you? are you sure you are ok?', 'are');  // 3
 ```
 
 ## Links
