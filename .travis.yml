@@ -7,3 +7,14 @@ php:
   - 5.4
   - 5.3
   - hhvm
+
+sudo: false
+
+install: travis_retry composer install --no-interaction --prefer-source
+
+before_script:
+  - travis_retry composer self-update
+  - travis_retry composer install --no-interaction --prefer-source
+
+script:
+  - vendor/bin/phpunit
