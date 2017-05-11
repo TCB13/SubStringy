@@ -7,6 +7,7 @@ This library extends and adds SubString functionality to `danielstjules/Stringy`
 
 * [Requiring/Loading](#requiringloading)
 * [OO and Chaining](#oo-and-chaining)
+* [Use as a Trait](#use-as-a-trait)
 * [Implemented Interfaces](#implemented-interfaces)
 * [PHP 5.6 Creation](#php-56-creation)
 * [Methods](#methods)
@@ -72,6 +73,32 @@ echo S::create('Fòô     Bàř', 'UTF-8')->collapseWhitespace()->swapCase();  /
 `Stringy\Stringy` has a __toString() method, which returns the current string
 when the object is used in a string context, ie:
 `(string) S::create('foo')  // 'foo'`
+
+## Use as a Trait
+
+The library also offers the possibility to be used a `trait`. With this trait you can build your own abstraction of `danielstjules/Stringy` and combine multiple extensions:
+
+```php
+namespace Vendor\YourPackage;
+
+use Stringy\Stringy;
+use SubStringy\SubStringyTrait;
+use SliceableStringy\SliceableStringyTrait;
+
+class MyStringy extends Stringy
+{
+    use SubStringyTrait;
+    use SliceableStringyTrait;
+}
+```
+
+On the example bellow we can use `MyStringy` to create `Stringy` objects enhanced with the functionality of both `SubStringy` and `SliceableStringy`:
+
+```php
+use YourPackage\MyStringy as S;
+$sliceableSubstring = S::create('What are your plans today?')->substringAfterFirst('plans ');
+echo $sliceableSubstring['4:6'];
+```
 
 ## Implemented Interfaces
 
