@@ -1,7 +1,5 @@
 <?php
 
-use SubStringy\SubStringy;
-
 abstract class CommonTest extends PHPUnit_Framework_TestCase
 {
     /**
@@ -21,7 +19,7 @@ abstract class CommonTest extends PHPUnit_Framework_TestCase
             array(' now, me is also here', 'find me now, me is also here', 'me', 'UTF-8'),
         );
     }
-    
+
     public function substringAfterLastProvider()
     {
         return array(
@@ -48,14 +46,14 @@ abstract class CommonTest extends PHPUnit_Framework_TestCase
 
     public function substringBetweenProvider()
     {
-        return array( 
+        return array(
             array(' nice ', 'hello this is a nice string', 'a', 'string', 'UTF-8'),
         );
     }
 
     public function substringCountProvider()
     {
-    	 return array( 
+    	 return array(
             array(2, 'hello how are you? are you ok?', '?', 'UTF-8'),
             array(1, 'hello how are you? are you ok?', 'hello', 'UTF-8'),
         );
