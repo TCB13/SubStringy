@@ -1,4 +1,5 @@
 language: php
+
 php:
   - 7.1
   - 7.0
@@ -9,11 +10,11 @@ php:
 
 sudo: false
 
-install: travis_retry composer install --no-interaction --prefer-source
+before_install:
+  - composer self-update
 
-before_script:
-  - travis_retry composer self-update
-  - travis_retry composer install --no-interaction --prefer-source
+install:
+  - composer install --prefer-dist --no-interaction
 
 script:
   - vendor/bin/phpunit

@@ -1,8 +1,5 @@
 <?php
 
-require_once __DIR__ . "/../vendor/autoload.php";
-require __DIR__ . '/../src/SubStringy.php';
-
 use SubStringy\SubStringy as S;
 
 class SubStringyTestCase extends CommonTest
