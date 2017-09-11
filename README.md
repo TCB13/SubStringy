@@ -36,8 +36,8 @@ in your composer.json file:
         }
     ],
     "require": {
-    	"danielstjules/Stringy": "dev-master",
-        "tcb13/SubStringy": "dev-master"
+        "danielstjules/stringy": "^3.1",
+        "tcb13/substringy": "dev-master"
     }
 }
 ```
