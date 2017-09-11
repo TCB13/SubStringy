@@ -5,7 +5,7 @@ This library extends and adds SubString functionality to `danielstjules/Stringy`
 
 [![Build Status](https://api.travis-ci.org/tcb13/SubStringy.svg?branch=master)](https://travis-ci.org/tcb13/SubStringy)
 
-* [Requiring/Loading](#requiringloading)
+* [Installation](#installation)
 * [OO and Chaining](#oo-and-chaining)
 * [Use as a Trait](#use-as-a-trait)
 * [Implemented Interfaces](#implemented-interfaces)
@@ -21,20 +21,13 @@ This library extends and adds SubString functionality to `danielstjules/Stringy`
 * [Tests](#tests)
 * [License](#license)
 
-## Requiring/Loading
+## Installation
 
 If you're using Composer to manage dependencies, you can include the following
 in your composer.json file:
 
 ```json
 {
-	"repositories":
-    [
-        {
-            "type": "vcs",
-            "url": "https://github.com/tcb13/SubStringy/"
-        }
-    ],
     "require": {
         "danielstjules/stringy": "^3.1",
         "tcb13/substringy": "dev-master"
