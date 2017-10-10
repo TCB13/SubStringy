@@ -30,7 +30,7 @@ in your composer.json file:
 {
     "require": {
         "danielstjules/stringy": "^3.1",
-        "tcb13/substringy": "dev-master"
+        "tcb13/substringy": "^1.0"
     }
 }
 ```
